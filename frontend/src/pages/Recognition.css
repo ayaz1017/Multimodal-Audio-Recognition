@@ -1,0 +1,272 @@
+.recognition-page {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.recognition-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow: var(--card-shadow);
+  max-width: 700px;
+  width: 100%;
+  animation: slideInCenter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(59, 90, 169, 0.24);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+:root.dark-mode .recognition-container {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+:root.light-mode .recognition-container {
+  background: rgba(255, 255, 255, 0.84);
+}
+
+@keyframes slideInCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.recognition-container h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+:root.dark-mode .recognition-container h1 {
+  color: var(--text-primary);
+}
+
+.recognition-container p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 35px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+:root.dark-mode .recognition-container p {
+  color: var(--text-secondary);
+}
+
+.patient-context-banner {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(18, 93, 255, 0.24);
+  background: linear-gradient(145deg, rgba(18, 93, 255, 0.09), rgba(19, 163, 154, 0.08));
+}
+
+.patient-context-banner.warning {
+  border-color: rgba(255, 153, 0, 0.35);
+  background: linear-gradient(145deg, rgba(255, 153, 0, 0.09), rgba(255, 199, 82, 0.12));
+}
+
+.patient-context-banner .context-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.patient-context-banner strong {
+  color: #151515;
+  font-size: 16px;
+}
+
+.patient-context-banner span {
+  color: #444;
+  font-size: 13px;
+}
+
+.patient-context-banner a {
+  color: #0a5fd8;
+  font-weight: 600;
+}
+
+:root.dark-mode .patient-context-banner {
+  border-color: rgba(132, 159, 255, 0.35);
+  background: linear-gradient(145deg, rgba(67, 88, 191, 0.25), rgba(37, 145, 143, 0.2));
+}
+
+:root.dark-mode .patient-context-banner .context-label,
+:root.dark-mode .patient-context-banner strong,
+:root.dark-mode .patient-context-banner span,
+:root.dark-mode .patient-context-banner a {
+  color: #edf1ff;
+}
+
+.analysis-note-box {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+}
+
+.analysis-note-box label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.analysis-note-box textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 86px;
+  border-radius: 12px;
+  border: 1px solid rgba(59, 90, 169, 0.28);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+  color: #1a1a1a;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.analysis-note-box textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(18, 93, 255, 0.2);
+}
+
+:root.dark-mode .analysis-note-box label {
+  color: var(--text-primary);
+}
+
+:root.dark-mode .analysis-note-box textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(160, 178, 255, 0.35);
+  color: var(--text-primary);
+}
+
+.file-info {
+  background: linear-gradient(135deg, rgba(18, 93, 255, 0.07) 0%, rgba(19, 163, 154, 0.07) 100%);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 25px 0;
+  border-left: 4px solid var(--accent-primary);
+  border: 1px solid rgba(18, 93, 255, 0.2);
+  animation: slideInUp 0.4s ease-out 0.3s both;
+}
+
+:root.dark-mode .file-info {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-color: var(--border-color);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.file-info p {
+  margin: 8px 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.file-info strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .recognition-container {
+    padding: 40px;
+  }
+
+  .recognition-container h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recognition-page {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .recognition-container {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .recognition-container h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .recognition-container p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .file-info {
+    padding: 15px;
+    margin: 20px 0;
+  }
+
+  .file-info p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recognition-page {
+    padding: 15px 0;
+  }
+
+  .recognition-container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .recognition-container h1 {
+    font-size: 22px;
+  }
+
+  .recognition-container p {
+    font-size: 13px;
+  }
+
+  .file-info {
+    padding: 12px;
+    margin: 15px 0;
+  }
+
+  .file-info p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+}
+
