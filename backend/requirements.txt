@@ -1,0 +1,2 @@
+-r ../backend_requirements.txt
+PyJWT==2.8.0

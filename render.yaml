@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: multimodal-audio-recognition-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false

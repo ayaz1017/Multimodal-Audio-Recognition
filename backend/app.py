@@ -13,7 +13,13 @@ from models.database import ensure_db
 
 app = Flask(__name__)
 CORS(app)
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
+is_vercel = os.getenv('VERCEL') == '1' or os.getenv('VERCEL_ENV') is not None
+default_upload_folder = (
+    '/tmp/uploads'
+    if is_vercel
+    else os.path.join(os.path.dirname(__file__), 'uploads')
+)
+UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER', default_upload_folder)
 ALLOWED_EXTENSIONS = {
     'wav',
     'mp3',
