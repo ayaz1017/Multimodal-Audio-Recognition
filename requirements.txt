@@ -13,3 +13,4 @@ pillow==9.5.0
 PyJWT==2.8.0
 setuptools>=65.5.0
 wheel
+gunicorn
